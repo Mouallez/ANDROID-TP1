@@ -11,13 +11,15 @@ package com.damien.sacquind.tp1;
         import android.widget.TextView;
         import android.widget.Toast;
 
+        import java.util.ArrayList;
+
 /**
  * Created by gayale on 15/01/2018.
  */
 public class TodoActivity extends Activity implements View.OnClickListener {
 
     private Button btnValider, btnClear;
-    private EditText editTextTache;
+    private ArrayList<String> listItems = new ArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +35,14 @@ public class TodoActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == btnValider.getId()) {
+        if(v.getId() == R.id.btnValider) {
             EditText edit = (EditText) findViewById(R.id.inputText);
             TextView view = (TextView) findViewById(R.id.listView);
-            view.setText(edit.getText().toString());
+            lvlistView = (ListView)findViewById(R.id.lvListView);
+            lvlistView.setAdapter(new ArrayAdapter(getApplicationContext(),
+                    android.R.layout.simple_list_item_1, listItems));
         }
-        if(v.getId() == btnClear.getId()) {
-
+        else {
         }
     }
 }

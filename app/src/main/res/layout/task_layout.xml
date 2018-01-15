@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <TextView
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_weight="0.27" />
+        android:layout_height="258dp"
+        android:id="@+id/lvlistView"
+        android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
